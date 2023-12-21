@@ -4,6 +4,7 @@ import { TripsIndex } from "./TripsIndex";
 import { TripsNew } from "./TripsNew";
 import { TripsShow } from "./TripsShow";
 import { Modal } from "./Modal";
+import { Signup } from "./Signup";
 
 export function Content() {
   const [trips, setTrips] = useState([]);
