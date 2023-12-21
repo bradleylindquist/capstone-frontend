@@ -5,6 +5,10 @@ export function TripsShow(props) {
     props.onUpdateTrip(props.trip.id, params, () => event.target.reset());
   };
 
+  const handleClick = () => {
+    props.onDestroyTrip(props.trip);
+  };
+
   return (
     <div>
       <h1>Trip information</h1>
@@ -23,6 +27,7 @@ export function TripsShow(props) {
         </div>
         <button type="submit">Update trip</button>
       </form>
+      <button onClick={handleClick}>Delete trip</button>
     </div>
   );
 }

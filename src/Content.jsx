@@ -49,6 +49,14 @@ export function Content() {
     });
   };
 
+  const handleDestroyTrip = (trip) => {
+    console.log("handleDestroyTrip", trip);
+    axios.delete(`http://localhost:3000/trips/${trip.id}.json`).then((response) => {
+      setTrips(trips.filter((p) => p.id !== trip.id));
+      handleClose();
+    });
+  };
+
   const handleClose = () => {
     console.log("handleClose");
     setIsTripsShowVisible(false);
@@ -61,7 +69,7 @@ export function Content() {
       <TripsNew onCreateTrip={handleCreateTrip} />
       <TripsIndex trips={trips} onShowTrip={handleShowTrip} />
       <Modal show={isTripsShowVisible} onClose={handleClose}>
-        <TripsShow trip={currentTrip} onUpdateTrip={handleUpdateTrip} />
+        <TripsShow trip={currentTrip} onUpdateTrip={handleUpdateTrip} onDestroyTrip={handleDestroyTrip} />
       </Modal>
     </div>
   );
