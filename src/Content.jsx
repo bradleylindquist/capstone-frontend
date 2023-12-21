@@ -5,6 +5,7 @@ import { TripsNew } from "./TripsNew";
 import { TripsShow } from "./TripsShow";
 import { Modal } from "./Modal";
 import { Signup } from "./Signup";
+import { Login } from "./Login";
 
 export function Content() {
   const [trips, setTrips] = useState([]);
