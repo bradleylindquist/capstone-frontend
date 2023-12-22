@@ -4,6 +4,7 @@ import { TripsIndex } from "./TripsIndex";
 import { TripsNew } from "./TripsNew";
 import { TripsShow } from "./TripsShow";
 import { Modal } from "./Modal";
+import { Routes, Route } from "react-router-dom";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
 import { LogoutLink } from "./LogoutLink";
@@ -68,9 +69,20 @@ export function Content() {
   useEffect(handleIndexTrips, []);
 
   return (
-    <div>
+    <div className="container">
       <TripsNew onCreateTrip={handleCreateTrip} />
       <TripsIndex trips={trips} onShowTrip={handleShowTrip} />
+
+      {/* <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/trips/new" element={<TripsNew onCreateTrip={handleCreateTrip} />} />
+        <Route path="/trips" element={<TripsIndex myTrips={trips} onShowTrip={handleShowTrip} />} />
+        <Route path="/" element={<TripsIndex myTrips={trips} onShowTrip={handleShowTrip} />} />
+
+        <Route path="/trips/:id" element={<TripsShowPage />} />
+      </Routes> */}
+
       <Modal show={isTripsShowVisible} onClose={handleClose}>
         <TripsShow trip={currentTrip} onUpdateTrip={handleUpdateTrip} onDestroyTrip={handleDestroyTrip} />
       </Modal>
