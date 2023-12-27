@@ -70,18 +70,14 @@ export function Content() {
 
   return (
     <div className="container">
-      <TripsNew onCreateTrip={handleCreateTrip} />
-      <TripsIndex trips={trips} onShowTrip={handleShowTrip} />
-
-      {/* <Routes>
+      <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/trips/new" element={<TripsNew onCreateTrip={handleCreateTrip} />} />
         <Route path="/trips" element={<TripsIndex myTrips={trips} onShowTrip={handleShowTrip} />} />
         <Route path="/" element={<TripsIndex myTrips={trips} onShowTrip={handleShowTrip} />} />
-
-        <Route path="/trips/:id" element={<TripsShowPage />} />
-      </Routes> */}
+        {/* <Route path="trips/:id" element={<TripsShowPage />} /> */}
+      </Routes>
 
       <Modal show={isTripsShowVisible} onClose={handleClose}>
         <TripsShow trip={currentTrip} onUpdateTrip={handleUpdateTrip} onDestroyTrip={handleDestroyTrip} />

@@ -13,7 +13,8 @@
   position: fixed;
   background: white;
   width: 80%;
-  height: auto;
+  height: 500px;
+  overflow-y: scroll;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -29,3 +30,4 @@
   top: 0em;
   right: 0.2em;
 }
+
