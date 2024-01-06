@@ -18,6 +18,9 @@ export function TripsNew(props) {
         <div>
           User: <input className="form-control" name="user_id" type="integer" />
         </div>
+        <div>
+          Place: <input className="form-control" name="place" type="text" />
+        </div>
         <button type="submit">Create New Trip</button>
       </form>
     </div>

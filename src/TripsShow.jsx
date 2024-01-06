@@ -11,30 +11,32 @@ export function TripsShow(props) {
 
   return (
     <div>
-      <h1>Trip information</h1>
-      <p>Title: {props.trip.title}</p>
-      <p>Url: {props.trip.image_url}</p>
-      <p>User: {props.trip.user_id}</p>
+      <h1>{props.trip.title}</h1>
+      {/* <p>Title: {props.trip.title}</p> */}
+      {/* // <p>Url: {props.trip.image_url}</p>
+      // <p>User: {props.trip.user_id}</p> */}
       {props.trip.places.map((place) => (
         <div key={place.id}>
           <h2>{place.name}</h2>
-          <img src={place.image_url} width="600;" />
+          <img src={place.image_url} width="850;" />
           <p>Description: {place.description}</p>
         </div>
       ))}
       <form onSubmit={handleSubmit}>
+        <button type="submit">Add a Place</button>
         <div>
-          Title: <input defaultValue={props.trip.title} name="title" type="text" />
+          Name: <input defaultValue={props.trip.title} name="title" type="text" />
         </div>
+
         <div>
-          Url: <input defaultValue={props.trip.image_url} name="image_url" type="text" />
+          Description: <input defaultValue={props.trip.description} name="user_id" type="integer" />
         </div>
+
         <div>
-          User: <input defaultValue={props.trip.user_id} name="user_id" type="integer" />
+          Add a colorful picture: <input defaultValue={props.trip.image_url} name="image_url" type="text" />
         </div>
-        <button type="submit">Update trip</button>
       </form>
-      <button onClick={handleClick}>Delete trip</button>
+      {/* <button onClick={handleClick}>Delete trip</button> */}
     </div>
   );
 }
