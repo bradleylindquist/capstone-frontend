@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export function Header() {
   return (
     <header>
-      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "forestgreen" }} data-bs-theme="dark">
+      <nav className="navbar navbar-expand-lg" data-bs-theme="dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             Travel!
@@ -39,6 +39,11 @@ export function Header() {
               </li>
               {localStorage.jwt === undefined ? (
                 <>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/map">
+                      Map
+                    </Link>
+                  </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/signup">
                       Signup

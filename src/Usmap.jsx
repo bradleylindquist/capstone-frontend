@@ -13,20 +13,23 @@ export function Usmap() {
 
   const slices = [
     { id: 1, lat: 41.7328, lng: -72.735, name: "Elmwood Pizza; West Hartford, CT" },
-    { id: 2, lat: 41.48401, lng: -71.3105, name: "Nikolas Pizza; Newport, RI" },
-    { id: 3, lat: 47.5216, lng: -95.4027, name: "Daroo's Pizza; Bagley, MN" },
-    { id: 4, lat: 45.5197, lng: -123.112, name: "Pizza Schmizza; Forest Grove, OR" },
-    { id: 5, lat: 39.485, lng: -80.142, name: "Colasessano's; Fairmont, WV" },
-    { id: 6, lat: 44.9778, lng: -93.265, name: "Pizza Luce; Minneapolis, MN" },
+    { id: 2, lat: 45.523, lng: -122.676, name: "Nikolas Pizza; Portland, OR" },
+    { id: 3, lat: 40.7126, lng: -74.0027, name: "Daroo's Pizza; New York, Ny" },
+    { id: 4, lat: 36.177, lng: -115.139, name: "Pizza Schmizza; Las Vegas, NV" },
+    { id: 5, lat: 21.315, lng: -157.852, name: "Colasessano's; Honolulu, HI" },
+    { id: 6, lat: 38.627, lng: -90.199, name: "Pizza Luce; St Louis, MO" },
+    { id: 7, lat: 50.073, lng: 14.41, name: "Pizza Luce;  Prague, CZ" },
+    { id: 8, lat: 45.76, lng: 4.835, name: "Pizza Luce;  Lyon, FR" },
+    { id: 8, lat: 24.555, lng: -81.78, name: "Pizza Luce;  Key West, FL" },
   ];
 
   return (
-    <Map height={800} defaultCenter={[39.099, -94.578]} defaultZoom={5}>
+    <Map height={800} defaultCenter={[47.569, -52.578]} defaultZoom={2.5}>
       {slices.map((slice) => (
-        <Overlay key={slice.id} anchor={[slice.lat, slice.lng]} offset={[43, 79]}>
+        <Overlay key={slice.id} anchor={[slice.lat, slice.lng]} offset={[23, 69]}>
           <img
-            src="https://cdn-icons-png.flaticon.com/512/2558/2558100.png"
-            width={75}
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Map_pin_icon_green.svg/352px-Map_pin_icon_green.svg.png"
+            width={45}
             height={75}
             alt="slice.name"
             onClick={() => {
@@ -39,7 +42,7 @@ export function Usmap() {
 
       <ZoomControl buttonStyle={style} />
       <Overlay anchor={[47.9107, -97.04438]} offset={[43, 39]} onDragEnd={setAnchor}>
-        <img
+        {/* <img
           src="https://cdn-icons-png.flaticon.com/512/218/218206.png"
           width={75}
           height={75}
@@ -48,12 +51,12 @@ export function Usmap() {
             setPopoverVisible(true);
             setPopoverContent("Giovanni's Pizza; Grand Forks, ND");
           }}
-        />
+        /> */}
       </Overlay>
       <Modal show={popoverVisible} onClose={() => setPopoverVisible(false)}>
         <div>{popoverContent}</div>
       </Modal>
-      <Marker width={30} anchor={[53.4307, -2.9607]} color={color} />
+      <Marker width={60} anchor={[59.334, 18.063]} color={color} />
     </Map>
   );
 }

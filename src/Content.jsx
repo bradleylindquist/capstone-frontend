@@ -7,6 +7,7 @@ import { Modal } from "./Modal";
 import { Routes, Route } from "react-router-dom";
 import { Signup } from "./Signup";
 import { Login } from "./Login";
+import { Usmap } from "./Usmap";
 import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
@@ -61,6 +62,23 @@ export function Content() {
     });
   };
 
+  const onCreatePlace = (params, successCallback) => {
+    console.log("onCreatePlace");
+    axios.post("http://localhost:3000/places.json", params).then((response) => {
+      setTrips(
+        trips.map((trip) => {
+          if (trip.id === response.data.id) {
+            return response.data;
+          } else {
+            return trip;
+          }
+        })
+      );
+      setCurrentTrip(response.data);
+      successCallback();
+    });
+  };
+
   const handleClose = () => {
     console.log("handleClose");
     setIsTripsShowVisible(false);
@@ -73,6 +91,7 @@ export function Content() {
       <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/map" element={<Usmap />} />
         <Route path="/trips/new" element={<TripsNew onCreateTrip={handleCreateTrip} />} />
         <Route path="/trips" element={<TripsIndex myTrips={trips} onShowTrip={handleShowTrip} />} />
         <Route path="/" element={<TripsIndex myTrips={trips} onShowTrip={handleShowTrip} />} />
@@ -80,7 +99,7 @@ export function Content() {
       </Routes>
 
       <Modal show={isTripsShowVisible} onClose={handleClose}>
-        <TripsShow trip={currentTrip} onUpdateTrip={handleUpdateTrip} onDestroyTrip={handleDestroyTrip} />
+        <TripsShow trip={currentTrip} onCreatePlace={onCreatePlace} onDestroyTrip={handleDestroyTrip} />
       </Modal>
     </div>
   );

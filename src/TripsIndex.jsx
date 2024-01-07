@@ -5,7 +5,7 @@ export function TripsIndex(props) {
       {props.myTrips.map((trip) => (
         <div key={trip.id}>
           <h2>{trip.title}</h2>
-          <p>User: {trip.user_id}</p>
+          <p>Trip created by: {trip.user.name}</p>
           <img src={trip.image_url} width="800;" />
           {/* <p>Places: {trip.place}</p> */}
           <div>

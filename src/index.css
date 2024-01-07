@@ -5,9 +5,34 @@ body {
 
 #trips-index img {
   width: 300px;
+  border-radius: 2em;
+  outline: .2rem solid gold;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+#root {
+  background: white
+  
+}
+
+header {
+  background: linear-gradient(90deg, forestgreen, black);
+  color: lightgrey;
+  padding: .4rem;
+  font-weight: 600;
+  outline: .15rem solid white
+}
+
+footer {
+  background: linear-gradient(90deg, black, forestgreen);
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  padding-left: 1em;
+  color: lightgrey;
+  font-size: x-large;
+  font-weight: 700;
+  outline: .15rem solid white
+}
