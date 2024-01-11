@@ -17,7 +17,7 @@ export function Content() {
 
   const handleIndexTrips = () => {
     console.log("handleIndexTrips");
-    axios.get("http://localhost:3000/trips.json").then((response) => {
+    axios.get("/trips.json").then((response) => {
       console.log(response.data);
       setTrips(response.data);
     });
@@ -25,7 +25,7 @@ export function Content() {
 
   const handleCreateTrip = (params, successCallback) => {
     console.log("handleCreateTrip", params);
-    axios.post("http://localhost:3000/trips.json", params).then((response) => {
+    axios.post("/trips.json", params).then((response) => {
       setTrips([...trips, response.data]);
       successCallback();
     });
@@ -39,7 +39,7 @@ export function Content() {
 
   const handleUpdateTrip = (id, params, successCallback) => {
     console.log("handleUpdateTrip", params);
-    axios.patch(`http://localhost:3000/trips/${id}.json`, params).then((response) => {
+    axios.patch(`/trips/${id}.json`, params).then((response) => {
       setTrips(
         trips.map((trip) => {
           if (trip.id === response.data.id) {
@@ -56,7 +56,7 @@ export function Content() {
 
   const handleDestroyTrip = (trip) => {
     console.log("handleDestroyTrip", trip);
-    axios.delete(`http://localhost:3000/trips/${trip.id}.json`).then((response) => {
+    axios.delete(`/trips/${trip.id}.json`).then((response) => {
       setTrips(trips.filter((p) => p.id !== trip.id));
       handleClose();
     });
@@ -64,7 +64,7 @@ export function Content() {
 
   const onCreatePlace = (params, successCallback) => {
     console.log("onCreatePlace");
-    axios.post("http://localhost:3000/places.json", params).then((response) => {
+    axios.post("/places.json", params).then((response) => {
       setTrips(
         trips.map((trip) => {
           if (trip.id === response.data.id) {

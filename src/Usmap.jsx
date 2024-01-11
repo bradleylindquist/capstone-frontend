@@ -12,15 +12,15 @@ export function Usmap() {
   const [popoverContent, setPopoverContent] = useState(undefined);
 
   const slices = [
-    { id: 1, lat: 41.7328, lng: -72.735, name: "Elmwood Pizza; West Hartford, CT" },
-    { id: 2, lat: 45.523, lng: -122.676, name: "Nikolas Pizza; Portland, OR" },
-    { id: 3, lat: 40.7126, lng: -74.0027, name: "Daroo's Pizza; New York, Ny" },
-    { id: 4, lat: 36.177, lng: -115.139, name: "Pizza Schmizza; Las Vegas, NV" },
-    { id: 5, lat: 21.315, lng: -157.852, name: "Colasessano's; Honolulu, HI" },
-    { id: 6, lat: 38.627, lng: -90.199, name: "Pizza Luce; St Louis, MO" },
-    { id: 7, lat: 50.073, lng: 14.41, name: "Pizza Luce;  Prague, CZ" },
-    { id: 8, lat: 45.76, lng: 4.835, name: "Pizza Luce;  Lyon, FR" },
-    { id: 8, lat: 24.555, lng: -81.78, name: "Pizza Luce;  Key West, FL" },
+    { id: 1, lat: 41.7328, lng: -72.735, name: " West Hartford, CT" },
+    { id: 2, lat: 45.523, lng: -122.676, name: " Portland, OR" },
+    { id: 3, lat: 40.7126, lng: -74.0027, name: " New York, Ny" },
+    { id: 4, lat: 36.177, lng: -115.139, name: " Las Vegas, NV" },
+    { id: 5, lat: 21.315, lng: -157.852, name: " Honolulu, HI" },
+    { id: 6, lat: 38.627, lng: -90.199, name: "St Louis, MO" },
+    { id: 7, lat: 50.073, lng: 14.41, name: "Prague, CZ" },
+    { id: 8, lat: 45.76, lng: 4.835, name: "Lyon, FR" },
+    { id: 8, lat: 24.555, lng: -81.78, name: "Key West, FL" },
   ];
 
   return (
